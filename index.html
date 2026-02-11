@@ -23,7 +23,7 @@
       <div class="flex items-center justify-between mb-4">
         <div>
           <h1 class="text-3xl font-bold">🏛️ Focus Procurement Sourcer</h1>
-          <p class="text-blue-200 mt-1">IT & Technology Government Contracts</p>
+          <p class="text-blue-200 mt-1">Active & Upcoming IT Government Contracts</p>
         </div>
         <div class="text-right text-sm text-blue-200">
           <div>NAICS: 541511, 541512, 518210, 511210, 541519</div>
@@ -61,7 +61,7 @@
   <div class="bg-white border-b py-4 px-4">
     <div class="max-w-6xl mx-auto flex flex-wrap gap-6 text-sm">
       <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">Total Contracts:</span>
+        <span class="font-semibold text-gray-700">Active Contracts:</span>
         <span id="totalCount" class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Loading...</span>
       </div>
       <div class="flex items-center gap-2">
@@ -207,16 +207,19 @@
     // Fetch from Socrata API
     async function fetchSocrata(source, keyword = '') {
       const config = SOURCES[source];
-      let url = `${config.endpoint}?$limit=200`;
+      let url = `${config.endpoint}?$limit=500`;
+      const today = new Date().toISOString().split('T')[0];
       
-      // Add IT-related filter
+      // Add IT-related filter + future date filter
       if (source === 'richmond') {
-        url += `&$where=type_of_solicitation like '%25Technology%25'`;
+        url += `&$where=type_of_solicitation like '%25Technology%25' AND effective_to > '${today}'`;
       } else if (source === 'montgomery') {
         const filters = IT_KEYWORDS.slice(0, 6).map(k => `contractdesc like '%25${k}%25'`).join(' OR ');
-        url += `&$where=${encodeURIComponent(filters)}`;
+        url += `&$where=(${encodeURIComponent(filters)}) AND expiration > '${today}'`;
       } else if (source === 'delaware') {
+        // Delaware is spend data, skip date filter - we'll filter client-side
         url += `&$where=contract_description like '%25SOFTWARE%25' OR contract_description like '%25TECHNOLOGY%25'`;
+        url += `&$order=month_of_spend DESC`;
       }
       
       try {
@@ -266,11 +269,19 @@
       const delaware = await fetchSocrata('delaware');
       allContracts.push(...delaware);
 
-      // Sort by most recent
+      // Filter to only future/active contracts (expiration date in future)
+      const today = new Date();
+      allContracts = allContracts.filter(contract => {
+        if (!contract.endDate) return true; // Keep if no end date (ongoing)
+        const endDate = new Date(contract.endDate);
+        return endDate > today;
+      });
+
+      // Sort by expiration date (soonest first)
       allContracts.sort((a, b) => {
-        const dateA = new Date(a.startDate || 0);
-        const dateB = new Date(b.startDate || 0);
-        return dateB - dateA;
+        const dateA = new Date(a.endDate || '2099-12-31');
+        const dateB = new Date(b.endDate || '2099-12-31');
+        return dateA - dateB;
       });
 
       // Update UI
