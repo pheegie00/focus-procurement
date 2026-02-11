@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus Procurement Sourcer</title>
+  <title>Focus Procurement Sourcer - Federal IT Opportunities</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,9 +11,11 @@
     body { font-family: 'Inter', sans-serif; }
     .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
     .card-hover { transition: all 0.2s ease; }
-    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
     .pulse { animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .deadline-urgent { background: #fef2f2; border-color: #fecaca; }
+    .deadline-soon { background: #fffbeb; border-color: #fde68a; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -23,7 +25,7 @@
       <div class="flex items-center justify-between mb-4">
         <div>
           <h1 class="text-3xl font-bold">🏛️ Focus Procurement Sourcer</h1>
-          <p class="text-blue-200 mt-1">Active IT Government Contracts • $500k+ • Click to bid</p>
+          <p class="text-blue-200 mt-1">Active Federal IT Solicitations • SAM.gov • Bid Now</p>
         </div>
         <div class="text-right text-sm text-blue-200">
           <div>NAICS: 541511, 541512, 518210, 511210, 541519</div>
@@ -31,26 +33,28 @@
         </div>
       </div>
       
-      <!-- Search & Filters -->
+      <!-- Filters -->
       <div class="bg-white/10 backdrop-blur rounded-lg p-4 mt-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div class="md:col-span-2">
-            <input type="text" id="searchInput" placeholder="Search contracts..." 
+            <input type="text" id="searchInput" placeholder="Search opportunities..." 
               class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400">
           </div>
-          <select id="sourceFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
-            <option value="">All Sources</option>
-            <option value="montgomery">Montgomery County, MD</option>
-            <option value="richmond">Richmond, VA</option>
-            <option value="boston">Boston, MA</option>
-            <option value="delaware">Delaware (State)</option>
+          <select id="naicsFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
+            <option value="">All NAICS Codes</option>
+            <option value="541511">541511 - Custom Programming</option>
+            <option value="541512">541512 - Systems Design</option>
+            <option value="518210">518210 - Data Processing</option>
+            <option value="511210">511210 - Software Publishers</option>
+            <option value="541519">541519 - Other Computer Services</option>
           </select>
           <select id="typeFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
             <option value="">All Types</option>
-            <option value="software">Software</option>
-            <option value="consulting">Consulting</option>
-            <option value="systems">Systems</option>
-            <option value="data">Data Services</option>
+            <option value="k">Combined Synopsis/Solicitation</option>
+            <option value="o">Solicitation</option>
+            <option value="p">Presolicitation</option>
+            <option value="r">Sources Sought</option>
+            <option value="s">Special Notice</option>
           </select>
         </div>
       </div>
@@ -61,16 +65,20 @@
   <div class="bg-white border-b py-4 px-4">
     <div class="max-w-6xl mx-auto flex flex-wrap gap-6 text-sm">
       <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">Active Contracts:</span>
+        <span class="font-semibold text-gray-700">Active Opportunities:</span>
         <span id="totalCount" class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Loading...</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">Sources:</span>
-        <span class="bg-green-100 text-green-800 px-2 py-1 rounded font-medium">4 APIs</span>
+        <span class="font-semibold text-gray-700">Source:</span>
+        <span class="bg-green-100 text-green-800 px-2 py-1 rounded font-medium">SAM.gov (Official)</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">States:</span>
-        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded font-medium">MD, VA, MA, DE</span>
+        <span class="text-red-600">🔴</span>
+        <span class="text-gray-600">= Deadline within 7 days</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-yellow-600">🟡</span>
+        <span class="text-gray-600">= Deadline within 14 days</span>
       </div>
     </div>
   </div>
@@ -78,11 +86,11 @@
   <!-- Loading State -->
   <div id="loadingState" class="max-w-6xl mx-auto px-4 py-12 text-center">
     <div class="pulse text-6xl mb-4">🏛️</div>
-    <p class="text-gray-600">Loading procurement data from government APIs...</p>
-    <div class="mt-4 text-sm text-gray-400" id="loadingStatus">Connecting to Montgomery County...</div>
+    <p class="text-gray-600">Loading active solicitations from SAM.gov...</p>
+    <div class="mt-4 text-sm text-gray-400" id="loadingStatus">Connecting to federal procurement database...</div>
   </div>
 
-  <!-- Contract Cards -->
+  <!-- Opportunities Cards -->
   <main id="contractsContainer" class="max-w-6xl mx-auto px-4 py-8 hidden">
     <div id="contractsList" class="grid gap-4">
       <!-- Cards will be inserted here -->
@@ -91,7 +99,7 @@
     <!-- Load More -->
     <div id="loadMore" class="text-center mt-8 hidden">
       <button onclick="loadMore()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-        Load More Contracts
+        Load More Opportunities
       </button>
     </div>
   </main>
@@ -99,253 +107,128 @@
   <!-- Empty State -->
   <div id="emptyState" class="max-w-6xl mx-auto px-4 py-12 text-center hidden">
     <div class="text-6xl mb-4">🔍</div>
-    <p class="text-gray-600">No contracts found matching your search.</p>
+    <p class="text-gray-600">No opportunities found matching your filters.</p>
   </div>
 
   <!-- Footer -->
   <footer class="bg-gray-100 border-t py-6 px-4 mt-auto">
     <div class="max-w-6xl mx-auto text-center text-sm text-gray-500">
-      <p>Data sourced from official government Socrata APIs</p>
-      <p class="mt-1">Montgomery County MD • Richmond VA • Boston MA • Delaware State</p>
-      <p class="mt-2">Built for <strong>Focus Consulting</strong> | NAICS: 541511, 541512, 518210, 511210, 541519</p>
+      <p>Data sourced in real-time from <strong>SAM.gov</strong> - Official Federal Procurement System</p>
+      <p class="mt-1">NAICS Codes: 541511, 541512, 518210, 511210, 541519 (IT Consulting & Software)</p>
+      <p class="mt-2">Built for <strong>Focus Consulting</strong></p>
     </div>
   </footer>
 
   <script>
     // Configuration
-    const SOURCES = {
-      montgomery: {
-        name: 'Montgomery County, MD',
-        endpoint: 'https://data.montgomerycountymd.gov/resource/vmu2-pnrc.json',
-        color: 'blue',
-        portalUrl: 'https://www.montgomerycountymd.gov/PRO/DBRC/index.html',
-        transform: (item) => ({
-          id: item.contractno,
-          title: item.contractdesc || 'No description',
-          vendor: item.vendor || 'Unknown',
-          department: item.deptname || 'Unknown',
-          type: item.contracttype || 'Unknown',
-          startDate: item.execution,
-          endDate: item.expiration,
-          value: null,
-          source: 'Montgomery County, MD',
-          sourceKey: 'montgomery',
-          contactName: item.cadmin || null,
-          contactEmail: item.cadminemail || null,
-          contactPhone: item.cadminphone || null,
-          buyerName: `${item.buyerfirst || ''} ${item.buyerlast || ''}`.trim() || null,
-          buyerEmail: item.buyeremail || null,
-          buyerPhone: item.buyerphone || null,
-          solicitation: item.solicitationnumber || null,
-          downloadUrl: item.downloadurl || null,
-          url: item.downloadurl || 'https://www.montgomerycountymd.gov/PRO/DBRC/index.html'
-        })
-      },
-      richmond: {
-        name: 'Richmond, VA',
-        endpoint: 'https://data.richmondgov.com/resource/xqn7-jvv2.json',
-        color: 'green',
-        portalUrl: 'https://www.rva.gov/procurement-services/solicitations',
-        transform: (item) => ({
-          id: item.contract_number,
-          title: item.description || 'No description',
-          vendor: item.supplier || 'Unknown',
-          department: item.agency_department || 'Unknown',
-          type: item.procurement_type || 'Unknown',
-          startDate: item.effective_from,
-          endDate: item.effective_to,
-          value: item.contract_value ? parseFloat(item.contract_value) : null,
-          source: 'Richmond, VA',
-          sourceKey: 'richmond',
-          solicitation: item.type_of_solicitation,
-          url: 'https://www.rva.gov/procurement-services/solicitations'
-        })
-      },
-      boston: {
-        name: 'Boston, MA',
-        endpoint: 'https://data.boston.gov/api/3/action/datastore_search',
-        resourceId: 'fe05fdc4-ea9d-43b1-a3cc-a87b55c1d6d5',
-        color: 'red',
-        isCkan: true,
-        portalUrl: 'https://www.boston.gov/departments/procurement',
-        transform: (item) => ({
-          id: item.cntrct_hdr_cntrct_id,
-          title: item.cntrct_hdr_descr || item.cs_doc_hdr_descr60 || 'No description',
-          vendor: item.vendor_name1 || 'Unknown',
-          department: item.dept_tbl_descr_3_digit || 'Unknown',
-          type: item.contract_method_subcategory || 'Unknown',
-          startDate: item.cntrct_hdr_cntrct_begin_dt,
-          endDate: item.cntrct_hdr_cntrct_expire_dt,
-          value: item.amt_cntrct_max ? parseFloat(item.amt_cntrct_max) : null,
-          source: 'Boston, MA',
-          sourceKey: 'boston',
-          mbe: item.city_or_state_mbe_wbe_certified,
-          solicitation: item.cntrct_hdr_vndr_cntrct_ref,
-          url: 'https://www.boston.gov/departments/procurement'
-        })
-      },
-      delaware: {
-        name: 'Delaware (State)',
-        endpoint: 'https://data.delaware.gov/resource/sifm-293u.json',
-        color: 'yellow',
-        transform: (item) => ({
-          id: item.long_contract_number,
-          title: item.contract_description || 'No description',
-          vendor: item.vendor_name || 'Unknown',
-          department: item.gss_gsa_agency || 'State',
-          type: 'State Contract',
-          startDate: item.month_of_spend,
-          endDate: null,
-          value: item.total_spend ? parseFloat(item.total_spend) : null,
-          source: 'Delaware (State)',
-          sourceKey: 'delaware',
-          url: null
-        })
-      }
-    };
-
-    // IT/Technology keywords for filtering
-    const IT_KEYWORDS = [
-      'software', 'technology', 'IT ', 'computer', 'data', 'systems', 
-      'digital', 'cloud', 'cyber', 'network', 'database', 'programming',
-      'application', 'web', 'mobile', 'analytics', 'consulting', 'developer',
-      'infrastructure', 'security', 'integration', 'platform', 'SaaS', 'hosting'
-    ];
-
-    let allContracts = [];
+    const NAICS_CODES = ['541511', '541512', '518210', '511210', '541519'];
+    const SAM_API_BASE = 'https://sam.gov/api/prod/sgs/v1/search/';
+    
+    let allOpportunities = [];
     let displayedCount = 0;
     const PAGE_SIZE = 20;
 
-    // Fetch from Socrata API
-    async function fetchSocrata(source, keyword = '') {
-      const config = SOURCES[source];
-      let url = `${config.endpoint}?$limit=500`;
-      const today = new Date().toISOString().split('T')[0];
-      
-      // Add IT-related filter + future date filter
-      if (source === 'richmond') {
-        url += `&$where=type_of_solicitation like '%25Technology%25' AND effective_to > '${today}'`;
-      } else if (source === 'montgomery') {
-        const filters = IT_KEYWORDS.slice(0, 6).map(k => `contractdesc like '%25${k}%25'`).join(' OR ');
-        url += `&$where=(${encodeURIComponent(filters)}) AND expiration > '${today}'`;
-      } else if (source === 'delaware') {
-        // Delaware is spend data, skip date filter - we'll filter client-side
-        url += `&$where=contract_description like '%25SOFTWARE%25' OR contract_description like '%25TECHNOLOGY%25'`;
-        url += `&$order=month_of_spend DESC`;
-      }
-      
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data.map(config.transform);
-      } catch (error) {
-        console.error(`Error fetching ${source}:`, error);
-        return [];
-      }
-    }
-
-    // Fetch from CKAN API (Boston)
-    async function fetchCkan(source, keyword = '') {
-      const config = SOURCES[source];
-      const url = `${config.endpoint}?resource_id=${config.resourceId}&q=technology software IT&limit=200`;
-      
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return (data.result?.records || []).map(config.transform);
-      } catch (error) {
-        console.error(`Error fetching ${source}:`, error);
-        return [];
-      }
-    }
-
-    // Load all data
-    async function loadAllData() {
+    // Fetch from SAM.gov
+    async function fetchSAMOpportunities() {
       const statusEl = document.getElementById('loadingStatus');
-      allContracts = [];
-
-      // Fetch from each source
-      statusEl.textContent = 'Fetching Montgomery County, MD...';
-      const montgomery = await fetchSocrata('montgomery');
-      allContracts.push(...montgomery);
-
-      statusEl.textContent = 'Fetching Richmond, VA...';
-      const richmond = await fetchSocrata('richmond');
-      allContracts.push(...richmond);
-
-      statusEl.textContent = 'Fetching Boston, MA...';
-      const boston = await fetchCkan('boston');
-      allContracts.push(...boston);
-
-      statusEl.textContent = 'Fetching Delaware...';
-      const delaware = await fetchSocrata('delaware');
-      allContracts.push(...delaware);
-
-      // Filter to only future/active contracts (expiration date in future) + $500k minimum
-      const today = new Date();
-      const MIN_VALUE = 500000;
+      allOpportunities = [];
       
-      allContracts = allContracts.filter(contract => {
-        // Must have expiration in future
-        if (contract.endDate) {
-          const endDate = new Date(contract.endDate);
-          if (endDate <= today) return false;
+      for (const naics of NAICS_CODES) {
+        statusEl.textContent = `Fetching NAICS ${naics} opportunities...`;
+        
+        try {
+          const url = `${SAM_API_BASE}?index=opp&q=NAICS:${naics}&page=0&size=100&is_active=true&sort=-publishDate`;
+          const response = await fetch(url);
+          const data = await response.json();
+          
+          if (data._embedded?.results) {
+            const opportunities = data._embedded.results.map(transformOpportunity);
+            allOpportunities.push(...opportunities);
+          }
+        } catch (error) {
+          console.error(`Error fetching NAICS ${naics}:`, error);
         }
-        
-        // Must be $500k+ (or unknown value)
-        if (contract.value !== null && contract.value < MIN_VALUE) return false;
-        
+      }
+
+      // Dedupe by solicitation number
+      const seen = new Set();
+      allOpportunities = allOpportunities.filter(opp => {
+        if (seen.has(opp.solicitationNumber)) return false;
+        seen.add(opp.solicitationNumber);
         return true;
       });
 
-      // Sort by expiration date (soonest first)
-      allContracts.sort((a, b) => {
-        const dateA = new Date(a.endDate || '2099-12-31');
-        const dateB = new Date(b.endDate || '2099-12-31');
+      // Sort by response deadline (soonest first)
+      allOpportunities.sort((a, b) => {
+        const dateA = new Date(a.responseDate || '2099-12-31');
+        const dateB = new Date(b.responseDate || '2099-12-31');
         return dateA - dateB;
       });
 
       // Update UI
       document.getElementById('loadingState').classList.add('hidden');
       document.getElementById('contractsContainer').classList.remove('hidden');
-      document.getElementById('totalCount').textContent = allContracts.length;
+      document.getElementById('totalCount').textContent = allOpportunities.length;
       document.getElementById('lastUpdated').textContent = `Updated: ${new Date().toLocaleString()}`;
 
       displayedCount = 0;
-      renderContracts();
+      renderOpportunities();
     }
 
-    // Render contracts
-    function renderContracts() {
+    // Transform SAM.gov data
+    function transformOpportunity(item) {
+      const contact = item.pointOfContacts?.[0] || {};
+      const org = item.organizationHierarchy || [];
+      const department = org.find(o => o.level === 1)?.name || 'Unknown';
+      const agency = org.find(o => o.level === 2)?.name || '';
+      const office = org.find(o => o.level === 3)?.name || '';
+      
+      return {
+        id: item._id,
+        solicitationNumber: item.solicitationNumber || item.cleanSolicitationNumber,
+        title: item.title || 'No title',
+        description: item.descriptions?.[0]?.content || '',
+        type: item.type?.value || 'Unknown',
+        typeCode: item.type?.code || '',
+        naics: item.naics?.[0]?.code || '',
+        naicsDesc: item.naics?.[0]?.value || '',
+        psc: item.psc?.[0]?.value || '',
+        department: department,
+        agency: agency,
+        office: office,
+        publishDate: item.publishDate,
+        responseDate: item.responseDate,
+        responseDateActual: item.responseDateActual,
+        archiveDate: item.archiveDate,
+        setAside: item.solicitation?.setAside?.value || 'Full & Open',
+        contactName: contact.fullName || null,
+        contactEmail: contact.email || null,
+        contactPhone: contact.phone || null,
+        placeOfPerformance: item.placeOfPerformance?.[0]?.state || 'See posting',
+        url: `https://sam.gov/opp/${item._id}/view`
+      };
+    }
+
+    // Render opportunities
+    function renderOpportunities() {
       const container = document.getElementById('contractsList');
       const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const sourceFilter = document.getElementById('sourceFilter').value;
+      const naicsFilter = document.getElementById('naicsFilter').value;
       const typeFilter = document.getElementById('typeFilter').value;
 
-      // Filter contracts
-      let filtered = allContracts.filter(contract => {
-        // Search filter
+      // Filter
+      let filtered = allOpportunities.filter(opp => {
         if (searchTerm) {
-          const searchable = `${contract.title} ${contract.vendor} ${contract.department}`.toLowerCase();
+          const searchable = `${opp.title} ${opp.department} ${opp.description}`.toLowerCase();
           if (!searchable.includes(searchTerm)) return false;
         }
-
-        // Source filter
-        if (sourceFilter && contract.sourceKey !== sourceFilter) return false;
-
-        // Type filter
-        if (typeFilter) {
-          const title = contract.title.toLowerCase();
-          if (!title.includes(typeFilter)) return false;
-        }
-
+        if (naicsFilter && opp.naics !== naicsFilter) return false;
+        if (typeFilter && opp.typeCode !== typeFilter) return false;
         return true;
       });
 
-      // Update count
       document.getElementById('totalCount').textContent = filtered.length;
 
-      // Check empty state
       if (filtered.length === 0) {
         container.innerHTML = '';
         document.getElementById('emptyState').classList.remove('hidden');
@@ -355,14 +238,11 @@
 
       document.getElementById('emptyState').classList.add('hidden');
 
-      // Paginate
       const toShow = filtered.slice(0, displayedCount + PAGE_SIZE);
       displayedCount = toShow.length;
 
-      // Render cards
-      container.innerHTML = toShow.map(contract => renderCard(contract)).join('');
+      container.innerHTML = toShow.map(renderCard).join('');
 
-      // Show/hide load more
       if (displayedCount < filtered.length) {
         document.getElementById('loadMore').classList.remove('hidden');
       } else {
@@ -371,83 +251,100 @@
     }
 
     // Render single card
-    function renderCard(contract) {
-      const colors = {
-        montgomery: 'blue',
-        richmond: 'green',
-        boston: 'red',
-        delaware: 'yellow'
-      };
-      const color = colors[contract.sourceKey] || 'gray';
-
-      const valueStr = contract.value 
-        ? `$${contract.value.toLocaleString()}` 
-        : 'Value not listed';
-
-      const endDateStr = contract.endDate 
-        ? new Date(contract.endDate).toLocaleDateString() 
-        : 'Ongoing';
-
-      // Build contact section
-      let contactHtml = '';
-      if (contract.contactEmail || contract.buyerEmail || contract.contactPhone) {
-        contactHtml = `
-          <div class="mt-4 pt-4 border-t border-gray-100">
-            <div class="text-sm font-medium text-gray-700 mb-2">📞 Contact Info</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-              ${contract.contactName ? `<div><span class="text-gray-400">Contact:</span> ${escapeHtml(contract.contactName)}</div>` : ''}
-              ${contract.contactEmail ? `<div><a href="mailto:${escapeHtml(contract.contactEmail)}" class="text-blue-600 hover:underline">${escapeHtml(contract.contactEmail)}</a></div>` : ''}
-              ${contract.contactPhone ? `<div><a href="tel:${escapeHtml(contract.contactPhone)}" class="text-blue-600 hover:underline">${escapeHtml(contract.contactPhone)}</a></div>` : ''}
-              ${contract.buyerName && !contract.contactName ? `<div><span class="text-gray-400">Buyer:</span> ${escapeHtml(contract.buyerName)}</div>` : ''}
-              ${contract.buyerEmail && !contract.contactEmail ? `<div><a href="mailto:${escapeHtml(contract.buyerEmail)}" class="text-blue-600 hover:underline">${escapeHtml(contract.buyerEmail)}</a></div>` : ''}
-            </div>
-          </div>
-        `;
+    function renderCard(opp) {
+      const now = new Date();
+      const deadline = new Date(opp.responseDate);
+      const daysUntil = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+      
+      let urgencyClass = '';
+      let urgencyIcon = '🟢';
+      if (daysUntil <= 7) {
+        urgencyClass = 'deadline-urgent border-l-4 border-l-red-500';
+        urgencyIcon = '🔴';
+      } else if (daysUntil <= 14) {
+        urgencyClass = 'deadline-soon border-l-4 border-l-yellow-500';
+        urgencyIcon = '🟡';
       }
 
-      // Solicitation info
-      const solicitationHtml = contract.solicitation 
-        ? `<div class="text-xs text-gray-500 mt-1">Solicitation: ${escapeHtml(contract.solicitation)}</div>`
-        : '';
+      const deadlineStr = opp.responseDate 
+        ? `${new Date(opp.responseDate).toLocaleDateString()} (${daysUntil} days)`
+        : 'See posting';
+
+      const typeColors = {
+        'k': 'green',  // Combined Synopsis/Solicitation
+        'o': 'blue',   // Solicitation
+        'p': 'purple', // Presolicitation
+        'r': 'yellow', // Sources Sought
+        's': 'gray'    // Special Notice
+      };
+      const typeColor = typeColors[opp.typeCode] || 'gray';
+
+      // Clean description (strip HTML, truncate)
+      const cleanDesc = opp.description
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .substring(0, 300);
 
       return `
-        <a href="${contract.url || '#'}" target="_blank" rel="noopener" class="block bg-white rounded-lg border p-5 card-hover cursor-pointer">
+        <a href="${opp.url}" target="_blank" rel="noopener" 
+           class="block bg-white rounded-lg border p-5 card-hover cursor-pointer ${urgencyClass}">
           <div class="flex justify-between items-start mb-3">
             <div class="flex-1">
-              <h3 class="font-semibold text-gray-800 text-lg leading-tight hover:text-blue-600">${escapeHtml(contract.title)}</h3>
-              <p class="text-gray-600 mt-1">Current: ${escapeHtml(contract.vendor)}</p>
-              ${solicitationHtml}
-            </div>
-            <span class="bg-${color}-100 text-${color}-800 text-xs px-2 py-1 rounded-full font-medium whitespace-nowrap ml-3">
-              ${escapeHtml(contract.source)}
-            </span>
-          </div>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm mt-4">
-            <div>
-              <span class="text-gray-400 block">Department</span>
-              <span class="text-gray-700 font-medium">${escapeHtml(contract.department)}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Type</span>
-              <span class="text-gray-700 font-medium">${escapeHtml(contract.type)}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Value</span>
-              <span class="text-green-600 font-semibold">${valueStr}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Expires</span>
-              <span class="text-orange-600 font-medium">${endDateStr}</span>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">${urgencyIcon}</span>
+                <span class="bg-${typeColor}-100 text-${typeColor}-800 text-xs px-2 py-1 rounded font-medium">
+                  ${escapeHtml(opp.type)}
+                </span>
+                <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">
+                  NAICS: ${opp.naics}
+                </span>
+              </div>
+              <h3 class="font-semibold text-gray-800 text-lg leading-tight hover:text-blue-600">
+                ${escapeHtml(opp.title)}
+              </h3>
+              <p class="text-sm text-gray-500 mt-1">${escapeHtml(opp.solicitationNumber)}</p>
             </div>
           </div>
           
-          ${contactHtml}
+          <p class="text-gray-600 text-sm mb-4 line-clamp-2">${escapeHtml(cleanDesc)}...</p>
           
-          <div class="mt-4 flex items-center justify-between">
-            ${contract.id ? `<span class="text-xs text-gray-400">Contract #${escapeHtml(contract.id)}</span>` : '<span></span>'}
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+            <div>
+              <span class="text-gray-400 block">Agency</span>
+              <span class="text-gray-700 font-medium">${escapeHtml(opp.department.split(',')[0])}</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block">Set-Aside</span>
+              <span class="text-gray-700 font-medium">${escapeHtml(opp.setAside || 'Full & Open')}</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block">Location</span>
+              <span class="text-gray-700 font-medium">${escapeHtml(opp.placeOfPerformance)}</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block">Response Due</span>
+              <span class="text-${daysUntil <= 7 ? 'red' : daysUntil <= 14 ? 'yellow' : 'gray'}-600 font-semibold">
+                ${deadlineStr}
+              </span>
+            </div>
+          </div>
+          
+          ${opp.contactEmail || opp.contactPhone ? `
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <div class="text-sm font-medium text-gray-700 mb-2">📞 Point of Contact</div>
+            <div class="flex flex-wrap gap-4 text-sm">
+              ${opp.contactName ? `<span class="text-gray-600">${escapeHtml(opp.contactName)}</span>` : ''}
+              ${opp.contactEmail ? `<a href="mailto:${escapeHtml(opp.contactEmail)}" class="text-blue-600 hover:underline" onclick="event.stopPropagation()">${escapeHtml(opp.contactEmail)}</a>` : ''}
+              ${opp.contactPhone ? `<a href="tel:${escapeHtml(opp.contactPhone)}" class="text-blue-600 hover:underline" onclick="event.stopPropagation()">${escapeHtml(opp.contactPhone)}</a>` : ''}
+            </div>
+          </div>
+          ` : ''}
+          
+          <div class="mt-4 flex items-center justify-end">
             <span class="text-blue-600 text-sm font-medium flex items-center gap-1">
-              View RFP Portal →
+              View on SAM.gov →
             </span>
           </div>
         </a>
@@ -462,27 +359,27 @@
     }
 
     function loadMore() {
-      renderContracts();
+      renderOpportunities();
     }
 
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', () => {
       displayedCount = 0;
-      renderContracts();
+      renderOpportunities();
     });
 
-    document.getElementById('sourceFilter').addEventListener('change', () => {
+    document.getElementById('naicsFilter').addEventListener('change', () => {
       displayedCount = 0;
-      renderContracts();
+      renderOpportunities();
     });
 
     document.getElementById('typeFilter').addEventListener('change', () => {
       displayedCount = 0;
-      renderContracts();
+      renderOpportunities();
     });
 
     // Initialize
-    loadAllData();
+    fetchSAMOpportunities();
   </script>
 </body>
 </html>
