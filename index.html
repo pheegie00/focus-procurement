@@ -158,6 +158,13 @@
         return true;
       });
 
+      // Remove Department of Defense
+      const DOD_KEYWORDS = ['DEFENSE', 'ARMY', 'NAVY', 'AIR FORCE', 'MARINE', 'PENTAGON', 'MILITARY'];
+      allOpportunities = allOpportunities.filter(opp => {
+        const dept = (opp.department || '').toUpperCase();
+        return !DOD_KEYWORDS.some(kw => dept.includes(kw));
+      });
+
       // Sort by response deadline (soonest first)
       allOpportunities.sort((a, b) => {
         const dateA = new Date(a.responseDate || '2099-12-31');
