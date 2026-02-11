@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus Procurement Sourcer - Federal IT Opportunities</title>
+  <title>Focus Procurement Sourcer - State & Local IT Opportunities</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,6 @@
     .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
     .pulse { animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-    .deadline-urgent { background: #fef2f2; border-color: #fecaca; }
-    .deadline-soon { background: #fffbeb; border-color: #fde68a; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -25,7 +23,7 @@
       <div class="flex items-center justify-between mb-4">
         <div>
           <h1 class="text-3xl font-bold">🏛️ Focus Procurement Sourcer</h1>
-          <p class="text-blue-200 mt-1">Active Federal IT Solicitations • SAM.gov • Bid Now</p>
+          <p class="text-blue-200 mt-1">State & Local IT Opportunities • MD, VA, PA, NJ, MA, DC, MN, WV, DE</p>
         </div>
         <div class="text-right text-sm text-blue-200">
           <div>NAICS: 541511, 541512, 518210, 511210, 541519</div>
@@ -35,26 +33,22 @@
       
       <!-- Filters -->
       <div class="bg-white/10 backdrop-blur rounded-lg p-4 mt-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="md:col-span-2">
             <input type="text" id="searchInput" placeholder="Search opportunities..." 
               class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400">
           </div>
-          <select id="naicsFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
-            <option value="">All NAICS Codes</option>
-            <option value="541511">541511 - Custom Programming</option>
-            <option value="541512">541512 - Systems Design</option>
-            <option value="518210">518210 - Data Processing</option>
-            <option value="511210">511210 - Software Publishers</option>
-            <option value="541519">541519 - Other Computer Services</option>
-          </select>
-          <select id="typeFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
-            <option value="">All Types</option>
-            <option value="k">Combined Synopsis/Solicitation</option>
-            <option value="o">Solicitation</option>
-            <option value="p">Presolicitation</option>
-            <option value="r">Sources Sought</option>
-            <option value="s">Special Notice</option>
+          <select id="stateFilter" class="px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none">
+            <option value="">All States</option>
+            <option value="MD">Maryland</option>
+            <option value="VA">Virginia</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="NJ">New Jersey</option>
+            <option value="MA">Massachusetts</option>
+            <option value="DC">Washington DC</option>
+            <option value="MN">Minnesota</option>
+            <option value="WV">West Virginia</option>
+            <option value="DE">Delaware</option>
           </select>
         </div>
       </div>
@@ -65,20 +59,15 @@
   <div class="bg-white border-b py-4 px-4">
     <div class="max-w-6xl mx-auto flex flex-wrap gap-6 text-sm">
       <div class="flex items-center gap-2">
-        <span class="font-semibold text-gray-700">Active Opportunities:</span>
+        <span class="font-semibold text-gray-700">IT Opportunities:</span>
         <span id="totalCount" class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Loading...</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="font-semibold text-gray-700">Source:</span>
-        <span class="bg-green-100 text-green-800 px-2 py-1 rounded font-medium">SAM.gov (Official)</span>
+        <span class="bg-green-100 text-green-800 px-2 py-1 rounded font-medium">State eProcurement Portals</span>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="text-red-600">🔴</span>
-        <span class="text-gray-600">= Deadline within 7 days</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-yellow-600">🟡</span>
-        <span class="text-gray-600">= Deadline within 14 days</span>
+      <div id="stateStats" class="flex flex-wrap gap-2">
+        <!-- State badges will be inserted here -->
       </div>
     </div>
   </div>
@@ -86,8 +75,7 @@
   <!-- Loading State -->
   <div id="loadingState" class="max-w-6xl mx-auto px-4 py-12 text-center">
     <div class="pulse text-6xl mb-4">🏛️</div>
-    <p class="text-gray-600">Loading active solicitations from SAM.gov...</p>
-    <div class="mt-4 text-sm text-gray-400" id="loadingStatus">Connecting to federal procurement database...</div>
+    <p class="text-gray-600">Loading state & local procurement opportunities...</p>
   </div>
 
   <!-- Opportunities Cards -->
@@ -113,124 +101,79 @@
   <!-- Footer -->
   <footer class="bg-gray-100 border-t py-6 px-4 mt-auto">
     <div class="max-w-6xl mx-auto text-center text-sm text-gray-500">
-      <p>Data sourced in real-time from <strong>SAM.gov</strong> - Official Federal Procurement System</p>
-      <p class="mt-1">NAICS Codes: 541511, 541512, 518210, 511210, 541519 (IT Consulting & Software)</p>
-      <p class="mt-2">Built for <strong>Focus Consulting</strong></p>
+      <p>Data scraped from official state eProcurement portals</p>
+      <p class="mt-1">MD (eMMA) • VA (eVA) • PA • NJ (NJSTART) • MA (COMMBUYS) • DC • MN • WV • DE</p>
+      <p class="mt-2">Built for <strong>Focus Consulting</strong> | NAICS: 541511, 541512, 518210, 511210, 541519</p>
     </div>
   </footer>
 
   <script>
-    // Configuration
-    const NAICS_CODES = ['541511', '541512', '518210', '511210', '541519'];
-    const SAM_API_BASE = 'https://sam.gov/api/prod/sgs/v1/search/';
+    const DATA_URL = './data/state-bids.json';
     
     let allOpportunities = [];
     let displayedCount = 0;
     const PAGE_SIZE = 20;
 
-    // Fetch from SAM.gov
-    async function fetchSAMOpportunities() {
-      const statusEl = document.getElementById('loadingStatus');
-      allOpportunities = [];
-      
-      for (const naics of NAICS_CODES) {
-        statusEl.textContent = `Fetching NAICS ${naics} opportunities...`;
+    const STATE_COLORS = {
+      'MD': 'blue',
+      'VA': 'green',
+      'PA': 'purple',
+      'NJ': 'orange',
+      'MA': 'red',
+      'DC': 'pink',
+      'MN': 'teal',
+      'WV': 'yellow',
+      'DE': 'indigo'
+    };
+
+    async function loadData() {
+      try {
+        const response = await fetch(DATA_URL);
+        const data = await response.json();
         
-        try {
-          const url = `${SAM_API_BASE}?index=opp&q=NAICS:${naics}&page=0&size=100&is_active=true&sort=-publishDate`;
-          const response = await fetch(url);
-          const data = await response.json();
-          
-          if (data._embedded?.results) {
-            const opportunities = data._embedded.results.map(transformOpportunity);
-            allOpportunities.push(...opportunities);
-          }
-        } catch (error) {
-          console.error(`Error fetching NAICS ${naics}:`, error);
-        }
+        allOpportunities = data.opportunities || [];
+        
+        // Update UI
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('contractsContainer').classList.remove('hidden');
+        document.getElementById('totalCount').textContent = allOpportunities.length;
+        document.getElementById('lastUpdated').textContent = `Updated: ${new Date(data.lastUpdated).toLocaleString()}`;
+        
+        // Show state stats
+        const stateCounts = {};
+        allOpportunities.forEach(opp => {
+          stateCounts[opp.state] = (stateCounts[opp.state] || 0) + 1;
+        });
+        
+        const statsHtml = Object.entries(stateCounts)
+          .sort((a, b) => b[1] - a[1])
+          .map(([state, count]) => `
+            <span class="bg-${STATE_COLORS[state] || 'gray'}-100 text-${STATE_COLORS[state] || 'gray'}-800 px-2 py-1 rounded text-xs font-medium">
+              ${state}: ${count}
+            </span>
+          `).join('');
+        document.getElementById('stateStats').innerHTML = statsHtml;
+        
+        displayedCount = 0;
+        renderOpportunities();
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('loadingState').innerHTML = `
+          <div class="text-6xl mb-4">⚠️</div>
+          <p class="text-gray-600">Error loading data. Run the scraper first:</p>
+          <code class="bg-gray-100 px-4 py-2 rounded mt-4 block">node scripts/scrape-states.js</code>
+        `;
       }
-
-      // Dedupe by solicitation number
-      const seen = new Set();
-      allOpportunities = allOpportunities.filter(opp => {
-        if (seen.has(opp.solicitationNumber)) return false;
-        seen.add(opp.solicitationNumber);
-        return true;
-      });
-
-      // Remove Department of Defense
-      const DOD_KEYWORDS = ['DEFENSE', 'ARMY', 'NAVY', 'AIR FORCE', 'MARINE', 'PENTAGON', 'MILITARY'];
-      allOpportunities = allOpportunities.filter(opp => {
-        const dept = (opp.department || '').toUpperCase();
-        return !DOD_KEYWORDS.some(kw => dept.includes(kw));
-      });
-
-      // Sort by response deadline (soonest first)
-      allOpportunities.sort((a, b) => {
-        const dateA = new Date(a.responseDate || '2099-12-31');
-        const dateB = new Date(b.responseDate || '2099-12-31');
-        return dateA - dateB;
-      });
-
-      // Update UI
-      document.getElementById('loadingState').classList.add('hidden');
-      document.getElementById('contractsContainer').classList.remove('hidden');
-      document.getElementById('totalCount').textContent = allOpportunities.length;
-      document.getElementById('lastUpdated').textContent = `Updated: ${new Date().toLocaleString()}`;
-
-      displayedCount = 0;
-      renderOpportunities();
     }
 
-    // Transform SAM.gov data
-    function transformOpportunity(item) {
-      const contact = item.pointOfContacts?.[0] || {};
-      const org = item.organizationHierarchy || [];
-      const department = org.find(o => o.level === 1)?.name || 'Unknown';
-      const agency = org.find(o => o.level === 2)?.name || '';
-      const office = org.find(o => o.level === 3)?.name || '';
-      
-      return {
-        id: item._id,
-        solicitationNumber: item.solicitationNumber || item.cleanSolicitationNumber,
-        title: item.title || 'No title',
-        description: item.descriptions?.[0]?.content || '',
-        type: item.type?.value || 'Unknown',
-        typeCode: item.type?.code || '',
-        naics: item.naics?.[0]?.code || '',
-        naicsDesc: item.naics?.[0]?.value || '',
-        psc: item.psc?.[0]?.value || '',
-        department: department,
-        agency: agency,
-        office: office,
-        publishDate: item.publishDate,
-        responseDate: item.responseDate,
-        responseDateActual: item.responseDateActual,
-        archiveDate: item.archiveDate,
-        setAside: item.solicitation?.setAside?.value || 'Full & Open',
-        contactName: contact.fullName || null,
-        contactEmail: contact.email || null,
-        contactPhone: contact.phone || null,
-        placeOfPerformance: item.placeOfPerformance?.[0]?.state || 'See posting',
-        url: `https://sam.gov/opp/${item._id}/view`
-      };
-    }
-
-    // Render opportunities
     function renderOpportunities() {
       const container = document.getElementById('contractsList');
       const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const naicsFilter = document.getElementById('naicsFilter').value;
-      const typeFilter = document.getElementById('typeFilter').value;
+      const stateFilter = document.getElementById('stateFilter').value;
 
-      // Filter
       let filtered = allOpportunities.filter(opp => {
-        if (searchTerm) {
-          const searchable = `${opp.title} ${opp.department} ${opp.description}`.toLowerCase();
-          if (!searchable.includes(searchTerm)) return false;
-        }
-        if (naicsFilter && opp.naics !== naicsFilter) return false;
-        if (typeFilter && opp.typeCode !== typeFilter) return false;
+        if (searchTerm && !opp.title.toLowerCase().includes(searchTerm)) return false;
+        if (stateFilter && opp.state !== stateFilter) return false;
         return true;
       });
 
@@ -257,101 +200,29 @@
       }
     }
 
-    // Render single card
     function renderCard(opp) {
-      const now = new Date();
-      const deadline = new Date(opp.responseDate);
-      const daysUntil = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+      const color = STATE_COLORS[opp.state] || 'gray';
       
-      let urgencyClass = '';
-      let urgencyIcon = '🟢';
-      if (daysUntil <= 7) {
-        urgencyClass = 'deadline-urgent border-l-4 border-l-red-500';
-        urgencyIcon = '🔴';
-      } else if (daysUntil <= 14) {
-        urgencyClass = 'deadline-soon border-l-4 border-l-yellow-500';
-        urgencyIcon = '🟡';
-      }
-
-      const deadlineStr = opp.responseDate 
-        ? `${new Date(opp.responseDate).toLocaleDateString()} (${daysUntil} days)`
-        : 'See posting';
-
-      const typeColors = {
-        'k': 'green',  // Combined Synopsis/Solicitation
-        'o': 'blue',   // Solicitation
-        'p': 'purple', // Presolicitation
-        'r': 'yellow', // Sources Sought
-        's': 'gray'    // Special Notice
-      };
-      const typeColor = typeColors[opp.typeCode] || 'gray';
-
-      // Clean description (strip HTML, truncate)
-      const cleanDesc = opp.description
-        .replace(/<[^>]*>/g, ' ')
-        .replace(/&nbsp;/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .substring(0, 300);
-
       return `
         <a href="${opp.url}" target="_blank" rel="noopener" 
-           class="block bg-white rounded-lg border p-5 card-hover cursor-pointer ${urgencyClass}">
+           class="block bg-white rounded-lg border p-5 card-hover cursor-pointer">
           <div class="flex justify-between items-start mb-3">
             <div class="flex-1">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-lg">${urgencyIcon}</span>
-                <span class="bg-${typeColor}-100 text-${typeColor}-800 text-xs px-2 py-1 rounded font-medium">
-                  ${escapeHtml(opp.type)}
-                </span>
-                <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">
-                  NAICS: ${opp.naics}
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-${color}-100 text-${color}-800 text-xs px-2 py-1 rounded font-medium">
+                  ${opp.stateName || opp.state}
                 </span>
               </div>
               <h3 class="font-semibold text-gray-800 text-lg leading-tight hover:text-blue-600">
                 ${escapeHtml(opp.title)}
               </h3>
-              <p class="text-sm text-gray-500 mt-1">${escapeHtml(opp.solicitationNumber)}</p>
             </div>
           </div>
           
-          <p class="text-gray-600 text-sm mb-4 line-clamp-2">${escapeHtml(cleanDesc)}...</p>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-            <div>
-              <span class="text-gray-400 block">Agency</span>
-              <span class="text-gray-700 font-medium">${escapeHtml(opp.department.split(',')[0])}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Set-Aside</span>
-              <span class="text-gray-700 font-medium">${escapeHtml(opp.setAside || 'Full & Open')}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Location</span>
-              <span class="text-gray-700 font-medium">${escapeHtml(opp.placeOfPerformance)}</span>
-            </div>
-            <div>
-              <span class="text-gray-400 block">Response Due</span>
-              <span class="text-${daysUntil <= 7 ? 'red' : daysUntil <= 14 ? 'yellow' : 'gray'}-600 font-semibold">
-                ${deadlineStr}
-              </span>
-            </div>
-          </div>
-          
-          ${opp.contactEmail || opp.contactPhone ? `
-          <div class="mt-4 pt-4 border-t border-gray-100">
-            <div class="text-sm font-medium text-gray-700 mb-2">📞 Point of Contact</div>
-            <div class="flex flex-wrap gap-4 text-sm">
-              ${opp.contactName ? `<span class="text-gray-600">${escapeHtml(opp.contactName)}</span>` : ''}
-              ${opp.contactEmail ? `<a href="mailto:${escapeHtml(opp.contactEmail)}" class="text-blue-600 hover:underline" onclick="event.stopPropagation()">${escapeHtml(opp.contactEmail)}</a>` : ''}
-              ${opp.contactPhone ? `<a href="tel:${escapeHtml(opp.contactPhone)}" class="text-blue-600 hover:underline" onclick="event.stopPropagation()">${escapeHtml(opp.contactPhone)}</a>` : ''}
-            </div>
-          </div>
-          ` : ''}
-          
-          <div class="mt-4 flex items-center justify-end">
-            <span class="text-blue-600 text-sm font-medium flex items-center gap-1">
-              View on SAM.gov →
+          <div class="mt-4 flex items-center justify-between text-sm">
+            <span class="text-gray-400">Source: ${getDomain(opp.source)}</span>
+            <span class="text-blue-600 font-medium flex items-center gap-1">
+              View Opportunity →
             </span>
           </div>
         </a>
@@ -365,6 +236,14 @@
       return div.innerHTML;
     }
 
+    function getDomain(url) {
+      try {
+        return new URL(url).hostname.replace('www.', '');
+      } catch {
+        return url;
+      }
+    }
+
     function loadMore() {
       renderOpportunities();
     }
@@ -375,18 +254,13 @@
       renderOpportunities();
     });
 
-    document.getElementById('naicsFilter').addEventListener('change', () => {
-      displayedCount = 0;
-      renderOpportunities();
-    });
-
-    document.getElementById('typeFilter').addEventListener('change', () => {
+    document.getElementById('stateFilter').addEventListener('change', () => {
       displayedCount = 0;
       renderOpportunities();
     });
 
     // Initialize
-    fetchSAMOpportunities();
+    loadData();
   </script>
 </body>
 </html>

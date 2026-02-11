@@ -1,0 +1,26 @@
+{
+  "name": "focus-procurement",
+  "version": "1.0.0",
+  "description": "Government IT & Technology contract aggregator for Focus Consulting.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pheegie00/focus-procurement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pheegie00/focus-procurement/issues"
+  },
+  "homepage": "https://github.com/pheegie00/focus-procurement#readme",
+  "dependencies": {
+    "puppeteer": "^24.37.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

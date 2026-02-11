@@ -1,0 +1,1163 @@
+{
+  "lastUpdated": "2026-02-11T03:57:59.750Z",
+  "totalOpportunities": 128,
+  "states": [
+    "VA",
+    "DC",
+    "MN"
+  ],
+  "opportunities": [
+    {
+      "id": "aHR0cHM6Ly92aXRhLmNv",
+      "title": "IT Contracts (VITA)",
+      "state": "VA",
+      "stateName": "Virginia",
+      "url": "https://vita.cobblestonesystems.com/public/",
+      "source": "https://eva.virginia.gov/pages/eva-solicitations.htm",
+      "scrapedAt": "2026-02-11T03:55:20.608Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9ldmEudmly",
+      "title": "eVA Open Data",
+      "state": "VA",
+      "stateName": "Virginia",
+      "url": "https://eva.virginia.gov/eva-open-data.html",
+      "source": "https://eva.virginia.gov/pages/eva-solicitations.htm",
+      "scrapedAt": "2026-02-11T03:55:20.610Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9kZ3Mudmly",
+      "title": "Policy, Consulting & Review",
+      "state": "VA",
+      "stateName": "Virginia",
+      "url": "https://dgs.virginia.gov/procurement/policy-consulting--review/about-pcr",
+      "source": "https://eva.virginia.gov/pages/eva-solicitations.htm",
+      "scrapedAt": "2026-02-11T03:55:20.610Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9kYy5nb3Yv",
+      "title": "Report Website Problems",
+      "state": "DC",
+      "stateName": "Washington DC",
+      "url": "https://dc.gov/page/dcgovernmentwebsite",
+      "source": "https://ocp.dc.gov/page/ocp-solicitations",
+      "scrapedAt": "2026-02-11T03:56:46.723Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Capitol Event Permits",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/public-events/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Small Business Certification for Minorities, Women, Veterans, and People with Disabilities",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/business/vendor-info/oep/sbcp/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Property and Casualty Insurance",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/risk/insurance/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Contract parking on the Capitol Complex",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/parking-transportation/parking/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cDovL3d3dy5tbWQu",
+      "title": "Cooperative purchasing opportunities",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "http://www.mmd.admin.state.mn.us/coop.htm",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Electric Vehicle charging stations",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/buildings-grounds/parking/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Info about visiting the State Capitol",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/buildings-grounds/buildings/statecapitol.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Info on government data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/data-info/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Leasing Info",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/real-estate/leasing/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Public auction dates",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/surplus-property/auctions/schedule/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Safety and loss control help",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/risk/safety-loss-control/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Services for small agencies, boards, and councils",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/smart/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cDovL3d3dy5tbWQu",
+      "title": "Solicitation and bid announcements",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "http://www.mmd.admin.state.mn.us/solicitations.htm",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "State surplus property",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/surplus-property/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Vehicles for state use",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/vehicles/vehicle-leasing/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cDovL3d3dy5tbWQu",
+      "title": "As a state vendor",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "http://www.mmd.admin.state.mn.us/mn02000.htm",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "For state auctions",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/surplus-property/auctions/registration/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "A state agency workers' compensation claim",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/risk/workers-comp/irisk-reporting/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.462Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Contact Admin",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/about/contact-us/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9wdWJsaWMu",
+      "title": "Subscribe for email updates",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://public.govdelivery.com/accounts/MNADMIN/subscriber/new",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Give us your feedback",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/website-feedback/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Buildings  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/building-management/buildings/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Retirement Systems Building",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/building-management/buildings/rsb.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Parking and Transit  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/parking-transportation/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Transit Options",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/parking-transportation/alternative-transportation/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Thank you for submitting your application!",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/confirmation.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data and Info  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/data-info/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "MN Capitol Art Exhibit Advisory Committee",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/public-events/artcommittee.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Retirement Systems Building",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/buildings-grounds/buildings/rsb.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Business Services",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/business/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data and Info",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/business/data-info/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Application",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/business/vendor-info/oep/sbcp/app/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.463Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data and Info",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/media/data-info/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Council on Developmental Disabilities",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/about/contact-us/mnddc.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/about/contact-us/data-practices.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Access",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/about/data-access/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "About this Website",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/about/about-this-site.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "PT Summit Redirect",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/pt-summit/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/archaeologist/website-feedback/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices Office",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Rules and Requirements  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/rules/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Collection of Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/rules/collection-data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices and the Courts  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/rules/courts/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Requesting Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/requests/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Classifications",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/classification/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Types of Data  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Body Camera Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/body-camera/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Contracting Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/contracting/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Education Data  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/education/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Law Enforcement  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/lawenforcement/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "ALPR Data and Audits",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/lawenforcement/alpr/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Law Enforcement Data Practices Policies and Procedures",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/lawenforcement/policies/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Notification and Subscription Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/notification/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Patient Data  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/patient/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Personnel Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/personnel/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Survey Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/surveys/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Traffic Accident Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/types/accidents/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Warnings and Notices  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/warnings/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Breaches  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/warnings/breaches/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Challenges and Appeals  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/appeals/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data About You",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/data/appeals/about-you/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Advisory Opinions  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/opinions/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Request an Opinion  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/opinions/request/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/opinions/request/data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "News and Trainings  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Trainings  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Workshops  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Workshop Handouts  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/handouts/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Advanced Data Practices: Personnel Data Redaction",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/handouts/personnelredaction.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices 201 Workshop Handouts",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/handouts/dp201.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Government Personnel Data Workshop",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/handouts/personnel.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Intro to Data Practices Workshop Handouts",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/news/trainings/workshops/handouts/intro.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data by Topic  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-topic/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "COVID-19 Data  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-topic/covid/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Population Data  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-topic/population-data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Historical Decennial Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-topic/population-data/historical-decennial-data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data by Place  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-place/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "MN Legislative District Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-place/mn-leg-district-data.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.464Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "School District Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/data-by-place/school-district-data.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Reports & Resources  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/reports-resources/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Guidance For Data Users",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/demography/reports-resources/guidance-for-data-users/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback Form  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/governors-residence/website-feedback/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/mnsafe/website-feedback/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Projects  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/ocdr/projects/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "MN Bridge-Building Network",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/ocdr/projects/mn-bridgebuilding-network/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "About Us  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/ocdr/about-us/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Our Network",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/ocdr/about-us/our-network/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Professional and Technical Contracts Unit",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/government/professionatechnicalcontracts/professional-and-technical-contracts-unit-.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "How To Solicit Construction Project",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/government/osptraining/solconst.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.465Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Contact Us  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/contact-us/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Requests",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/contact-us/data-requests/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/contact-us/website-feedback.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Tax Incentives  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Minnesota Historic Structure Rehabilitation Tax Credit  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Applications, Instructions, Tips  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/applications/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Tax Credit FAQs and Tips",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/applications/htcfaqs.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Submitting an Application",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/submitting/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Tax Credit Links and Connections",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/links/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Minnesota State Credit Contacts",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/incentives/state/contacts/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "About Us  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/about/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Statewide Preservation Program  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/about/preservation-program/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "CLG Funds Enhance Litchfield's Website",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/about/preservation-program/litchfieldsuccess.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Record Number of Historic Tax Credit Applications",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/shpo/about/preservation-program/taxsuccess.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Assistive Technology Information  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/information/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "AAC Consideration Toolkit",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/resources/aac-consideration-toolkit/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "About  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/about/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback Form",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/about/website-feedback.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Assistive Technology Act  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/assistive-technology-act/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "National Data",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/assistive-technology-act/national-data/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Accessibility  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/accessibility/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "AAC Kit Redirect",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/star/aac-kit/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Getting Started  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/at/getting-started/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Choosing Assistive Technology",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/at/getting-started/ready-sett-go.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "About This Site  menu item with sub-menu",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/at/about/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Website Feedback Form",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/at/about/feedback.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Building Management",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/government/buildings-grounds/building-management/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.466Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Equity in Procurement",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/business/vendor-info/oep/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.467Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Problem Solving Toolkit",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/ocdr/toolkit/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.468Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "OSP Training",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/osp/government/osptraining/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.468Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Community Programs",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/citizen/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.469Z"
+    },
+    {
+      "id": "aHR0cDovL21uLmdvdi9t",
+      "title": "Developmental Disabilities",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "http://mn.gov/mnddc/",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.469Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Data Practices Office",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/data-practices/",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.469Z"
+    },
+    {
+      "id": "aHR0cHM6Ly9tbi5nb3Yv",
+      "title": "Customer feedback",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "url": "https://mn.gov/admin/customer-feedback/index.jsp",
+      "source": "https://mn.gov/admin/government/contracting-purchasing/current-opportunities/",
+      "scrapedAt": "2026-02-11T03:56:53.469Z"
+    }
+  ]
+}
