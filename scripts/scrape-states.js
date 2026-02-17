@@ -14,12 +14,53 @@ const path = require('path');
 
 const OUTPUT_FILE = path.join(__dirname, '..', 'data', 'state-bids.json');
 
-// NAICS codes for IT consulting
+// Focus Consulting NAICS Codes - Primary filter
+const FOCUS_NAICS_CODES = [
+  '541511',  // Custom Computer Programming Services
+  '541512',  // Computer Systems Design Services
+  '518210',  // Data Processing, Hosting, and Related Services
+  '511210',  // Software Publishers
+  '541519'   // Other Computer Related Services
+];
+
+// NAICS code descriptions for matching
+const NAICS_DESCRIPTIONS = {
+  '541511': 'custom computer programming',
+  '541512': 'computer systems design',
+  '518210': 'data processing hosting',
+  '511210': 'software publishers',
+  '541519': 'computer related services'
+};
+
+// Fallback keywords when NAICS not available
 const TARGET_KEYWORDS = [
   'software', 'IT ', 'technology', 'computer', 'data', 'systems',
   'programming', 'application', 'web', 'cloud', 'cyber', 'network',
-  'consulting', 'digital', 'database', 'infrastructure', 'development'
+  'consulting', 'digital', 'database', 'infrastructure', 'development',
+  'custom programming', 'systems design', 'data processing', 'hosting'
 ];
+
+// Helper to check if opportunity matches Focus NAICS
+function matchesFocusNAICS(text, naicsCode = null) {
+  // Direct NAICS code match
+  if (naicsCode && FOCUS_NAICS_CODES.includes(naicsCode.toString())) {
+    return true;
+  }
+  
+  // Check if text contains any NAICS code
+  const textLower = text.toLowerCase();
+  for (const code of FOCUS_NAICS_CODES) {
+    if (text.includes(code)) return true;
+  }
+  
+  // Check NAICS descriptions
+  for (const desc of Object.values(NAICS_DESCRIPTIONS)) {
+    if (textLower.includes(desc)) return true;
+  }
+  
+  // Fallback to keyword matching
+  return TARGET_KEYWORDS.some(kw => textLower.includes(kw.toLowerCase()));
+}
 
 // State portal configurations
 const STATE_PORTALS = {
@@ -117,10 +158,10 @@ async function genericScraper(page, state) {
       return results;
     });
     
-    // Filter for IT-related opportunities
+    // Filter for Focus Consulting NAICS-relevant opportunities
     for (const item of items) {
-      const searchText = `${item.title} ${item.context}`.toLowerCase();
-      const isRelevant = TARGET_KEYWORDS.some(kw => searchText.includes(kw.toLowerCase()));
+      const searchText = `${item.title} ${item.context}`;
+      const isRelevant = matchesFocusNAICS(searchText);
       
       if (isRelevant && item.url.startsWith('http')) {
         opportunities.push({
