@@ -46,6 +46,7 @@ const STATE_PORTALS = {
     name: 'New Jersey',
     abbrev: 'NJ',
     url: 'https://www.njstart.gov/bso/external/publicBids.sdo',
+    contractsUrl: 'https://www.njstart.gov/bso/view/search/external/advancedSearchContractBlanket.xhtml?view=activeContracts',
     altUrl: 'https://www.state.nj.us/treasury/purchase/advertised.shtml',
     scraper: scrapeNewJersey
   },
@@ -202,13 +203,83 @@ async function scrapePennsylvania(page, state) {
   return genericScraper(page, state);
 }
 
-// New Jersey - try alternate URL
+// New Jersey - scrape both public bids AND active contracts
 async function scrapeNewJersey(page, state) {
   const opportunities = [];
   
+  // 1. Scrape Active Contracts from NJSTART advanced search
   try {
-    // Try the advertised bids page
-    await page.goto(state.altUrl || state.url, { waitUntil: 'networkidle2', timeout: 60000 });
+    console.log('   📋 Scraping NJ Active Contracts...');
+    await page.goto(state.contractsUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+    await sleep(3000);
+    
+    // Click Search button to load all contracts (empty search = all results)
+    const searchBtn = await page.$('input[type="submit"][value*="Search"], button[type="submit"]');
+    if (searchBtn) {
+      await searchBtn.click();
+      await sleep(5000); // Wait for results to load
+    }
+    
+    // Extract contract data from results table
+    const contracts = await page.evaluate(() => {
+      const results = [];
+      // NJSTART uses data tables - look for rows with contract info
+      const rows = document.querySelectorAll('table tbody tr, .dataTable tr, [class*="result"] tr');
+      
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        const link = row.querySelector('a');
+        
+        if (cells.length >= 2) {
+          const contractNum = cells[0]?.textContent?.trim() || '';
+          const description = cells[1]?.textContent?.trim() || cells[2]?.textContent?.trim() || '';
+          const vendor = cells[3]?.textContent?.trim() || '';
+          const url = link?.href || '';
+          
+          if (description.length > 5) {
+            results.push({
+              contractNumber: contractNum,
+              title: description,
+              vendor: vendor,
+              url: url || `https://www.njstart.gov/contract/${contractNum}`,
+              type: 'contract'
+            });
+          }
+        }
+      });
+      
+      return results;
+    });
+    
+    console.log(`   Found ${contracts.length} contracts`);
+    
+    for (const item of contracts) {
+      const searchText = `${item.title} ${item.vendor}`.toLowerCase();
+      const isRelevant = TARGET_KEYWORDS.some(kw => searchText.includes(kw.toLowerCase()));
+      
+      if (isRelevant) {
+        opportunities.push({
+          id: Buffer.from(item.contractNumber || item.url).toString('base64').substring(0, 20),
+          title: item.title,
+          contractNumber: item.contractNumber,
+          vendor: item.vendor,
+          state: state.abbrev,
+          stateName: state.name,
+          url: item.url,
+          source: state.contractsUrl,
+          type: 'contract',
+          scrapedAt: new Date().toISOString()
+        });
+      }
+    }
+  } catch (error) {
+    console.error(`   Error scraping NJ contracts: ${error.message}`);
+  }
+  
+  // 2. Also scrape advertised bids page
+  try {
+    console.log('   📋 Scraping NJ Advertised Bids...');
+    await page.goto(state.altUrl, { waitUntil: 'networkidle2', timeout: 60000 });
     await sleep(3000);
     
     const items = await page.evaluate(() => {
@@ -222,7 +293,8 @@ async function scrapeNewJersey(page, state) {
         if (text.length > 10 && (href.includes('bid') || href.includes('rfp') || href.includes('.pdf'))) {
           results.push({
             title: text,
-            url: href
+            url: href,
+            type: 'bid'
           });
         }
       });
@@ -241,13 +313,14 @@ async function scrapeNewJersey(page, state) {
           state: state.abbrev,
           stateName: state.name,
           url: item.url,
-          source: state.altUrl || state.url,
+          source: state.altUrl,
+          type: 'bid',
           scrapedAt: new Date().toISOString()
         });
       }
     }
   } catch (error) {
-    console.error(`Error scraping ${state.name}: ${error.message}`);
+    console.error(`   Error scraping NJ bids: ${error.message}`);
   }
   
   return opportunities;
